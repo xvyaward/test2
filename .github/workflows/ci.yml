@@ -14,7 +14,7 @@ jobs:
       - name: modify README file
         run: sed '2 i\ \n### testing\n' README.md -i
       - name: Pushes to another repository
-        uses: cpina/github-action-push-to-another-repository@main
+        uses: xvyaward/github-action-push-to-another-repository@main
         env:
           SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
         with:
