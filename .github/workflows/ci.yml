@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: remove .git
+        run: rm -r .git && rm -r .github
       - name: Pushes to another repository
         uses: xvyaward/github-action-push-to-another-repository@main
         env:
