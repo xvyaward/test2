@@ -11,10 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: modify README
+        run: run: sed '2 i\ \n### Testing github action.\n' README.md -i
       - name: remove .git
         run: rm -r .git && rm -r .github
       - name: Pushes to another repository
-        uses: xvyaward/github-action-push-to-another-repository@main
+        uses: cpina/github-action-push-to-another-repository@main
         env:
           SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
         with:
